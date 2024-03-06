@@ -1,59 +1,52 @@
 #include "login.h"
-#include "ui_login.h"
-#include "user.h" // Include the user header
-#include "welcomepage.h" // Include the WelcomePage header
-#include "registerpage.h" // Include the RegisterPage header
-#include <QWidget>
-Login::Login(QWidget *parent) : QWidget(parent), ui(new Ui::Login)
+#include "./ui_login.h"
+#include "Users.h"
+#include "welcome.h"
+
+login::login(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::login)
 {
-    ui->setupUi(this); // This creates the widgets defined in Qt Designer
+    ui->setupUi(this);
 
-    // Initialize your UI components, including errorLabel
-    errorLabel = ui->ErrorBar; // Assuming your label in the UI is named "ErrorBar"
-    errorLabel->setVisible(false);  // Setting visibility to false initially
-
-    // Other initialization code if needed
+    ui->errorlabel->setVisible(false);
 }
 
-Login::~Login()
+login::~login()
 {
-    delete ui; // Release the UI resources
+    delete ui;
 }
 
-void Login::on_Login_2_clicked()
+void login::on_login_button_clicked()
 {
-    QString enteredUsername = ui->UsernameEntered->text();
-    QString enteredPassword = ui->PasswordEntered->text();
 
-    bool found = false;
-    for(int i = 0; i < UsersCount; ++i)
-    {
-        if(usernames[i] == enteredUsername && passwords[i] == enteredPassword)
-        {
-            found = true;
-            break;
-        }
-    }
+    QString enteredusername = ui->login_username_input->text();
+    QString enteredpassword = ui->password_login_input->text();
 
-    if(found)
+    int userIndex = username->indexOf(enteredusername);
+
+    if(userIndex != -1 && password[userIndex] == enteredpassword)
     {
-        // Successful login
-        WelcomePage *welcomePage = new WelcomePage; // Create WelcomePage instance
-        welcomePage->show(); // Show the WelcomePage
-        this->close(); // Close the Login window
+        hide();
+        welcome *welcomewindow = new welcome(this);
+        welcomewindow->show();
     }
     else
     {
-        // Unsuccessful login
-        errorLabel->setText("Error: Wrong username or password"); // Set error message
-        errorLabel->setVisible(true); // Show the error label
+        ui->errorlabel->setVisible(true);
     }
+
+
+
 }
 
-void Login::on_Register_clicked()
+
+
+void login::on_register_button_1_clicked()
 {
-    // Show the RegisterPage
-    RegisterPage *registerPage = new RegisterPage; // Create RegisterPage instance
-    registerPage->setAttribute(Qt::WA_DeleteOnClose); // Set attribute to delete on close
-    registerPage->show(); // Show the RegisterPage
+    hide();
+    register *registerwindow = new register;
+    registerwindow.show();
+
 }
+

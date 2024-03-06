@@ -1,127 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Login</class>
- <widget class="QMainWindow" name="Login">
+ <class>login</class>
+ <widget class="QMainWindow" name="login">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>368</width>
-    <height>287</height>
+    <width>381</width>
+    <height>593</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Login</string>
-  </property>
-  <property name="styleSheet">
-   <string notr="true">color: rgb(255, 255, 255)</string>
+   <string>login</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLineEdit" name="UsernameEntered">
+   <widget class="QLineEdit" name="login_username_input">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>80</y>
-      <width>211</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">colour: rgb(255, 255, 255)</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="PasswordEntered">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>130</y>
-      <width>211</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">colour: rgb(255, 255, 255)</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Login_2">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>200</y>
-      <width>83</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">colour: rgb(255, 255, 255)</string>
-    </property>
-    <property name="text">
-     <string>Login</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Register">
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>200</y>
-      <width>83</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Register</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Username">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>80</y>
-      <width>71</width>
+      <x>140</x>
+      <y>120</y>
+      <width>113</width>
       <height>21</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Username</string>
-    </property>
    </widget>
-   <widget class="QLabel" name="Instruction">
+   <widget class="QLineEdit" name="password_login_input">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>30</y>
-      <width>241</width>
+      <x>140</x>
+      <y>210</y>
+      <width>113</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="login_username_label">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>120</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Username:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="login_password_label">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>210</y>
+      <width>81</width>
       <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>Enter your username and password</string>
+     <string>Password:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="Pssword">
+   <widget class="QPushButton" name="login_button">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>130</y>
-      <width>71</width>
+      <x>70</x>
+      <y>380</y>
+      <width>100</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>login</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="register_button_1">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>380</y>
+      <width>100</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>register</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="errorlabel">
+    <property name="geometry">
+     <rect>
+      <x>77</x>
+      <y>340</y>
+      <width>231</width>
       <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>Password</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#e83324;&quot;&gt;Error: wrong username or password.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
-   </widget>
-   <widget class="QLabel" name="ErrorBar">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>170</y>
-      <width>201</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#aa0000;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>
@@ -130,8 +117,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>368</width>
-     <height>25</height>
+     <width>381</width>
+     <height>22</height>
     </rect>
    </property>
   </widget>

@@ -1,28 +1,30 @@
 #ifndef LOGIN_H
 #define LOGIN_H
 
-#include "qlabel.h"
-#include <QWidget>
+#include <QMainWindow>
 
+QT_BEGIN_NAMESPACE
 namespace Ui {
-class Login;
+class login;
 }
+QT_END_NAMESPACE
 
-class Login : public QWidget
+class login : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit Login(QWidget *parent = nullptr);
-    ~Login();
+    login(QWidget *parent = nullptr);
+    ~login();
 
 private slots:
-    void on_Login_2_clicked();
-    void on_Register_clicked();
+    void on_login_button_clicked();
+
+    void on_register_button_2_clicked();
+
+    void on_register_button_1_clicked();
 
 private:
-    Ui::Login *ui; // Pointer to the UI object
-    QLabel *errorLabel; // Pointer to the error label
+    Ui::login *ui;
 };
-
 #endif // LOGIN_H
